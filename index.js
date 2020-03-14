@@ -12,6 +12,7 @@ require('./script/helpers/git');
 
 program
   .command('acmp [msg]')
+  .alias('cm')
   .description('one line command commit code')
   .option('--feat', 'Add new feature')
   .option('--fix', 'Fix bug, hotfix')
