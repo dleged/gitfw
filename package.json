@@ -1,6 +1,6 @@
 {
-  "name": "git-flow-workflow",
-  "version": "1.0.0",
+  "name": "gitfw",
+  "version": "1.0.1",
   "description": "The complete solution for git flow workflow.Faster and cooler",
   "mail": "duanduanf@gmail.com",
   "keywords": [
@@ -24,9 +24,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.19.0"
-  },
-  "devDependencies": {
+    "commander": "^2.19.0",
     "chalk": "^2.4.2",
     "shelljs": "^0.8.3"
   }
