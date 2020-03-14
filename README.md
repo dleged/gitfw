@@ -16,9 +16,9 @@ to ensure the team is on the same page, an agreed upon Git workflow should be de
 6. If an issue in master is detected a hotfix branch is created from master
 7. Once the hotfix is complete it is merged to both develop and master
 
-<!--[Gitflow Workflow pic]()-->
+![gitflow-workflow](https://raw.githubusercontent.com/dleged/gitfw/master/helper/git-flow.png)
 
-* [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) Reference article，Thanks😊
+* [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) Reference article，Thanks
 
 
 
