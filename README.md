@@ -83,7 +83,7 @@ Options:
 #### for example:
 now your branch is feature/shopcar_page,and use 'gitfw acmp -f [msg]' to commit: 
 ```
-$  gitfw acmp -f 'new shopcar page'
+$  gitfw acmp --feat 'new shopcar page'
 
 * feature/shopcar_page
 [feature/shopcar_page 8eaf024] feat: new shopcar page
