@@ -61,7 +61,7 @@ If you like to submit code using the git command line,gitfw is a fast and conven
 ```
 $ gitfw acmp -h
 
-Usage: acmp [options] [msg]
+Usage: acmp|cm [options] [msg]
 
 one line command commit code
 
@@ -81,7 +81,7 @@ Options:
 ```
 
 #### for example:
-now your branch is feature/shopcar_page,and use 'gitfw acmp -f [msg]' to commit: 
+now your branch is feature/shopcar_page,and use 'gitfw acmp --feat [msg]' to commit: 
 ```
 $  gitfw acmp --feat 'new shopcar page'
 
@@ -179,7 +179,6 @@ Operation information:
 #### 1.Feature Branches
 feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop;
 > Creating a feature branch
-
 ```
 Without the gitfw extensions:
 $ git checkout develop
@@ -191,7 +190,6 @@ $ gitfw start -f shopcar_page
 When you’re done with the development work on the feature, the next step is to merge the feature/shopcar_page into develop.
 
 > Finishing a feature branch
-
 ```
 Without the gitfw extensions:
 $ git checkout develop
@@ -207,7 +205,6 @@ Using a dedicated branch to prepare releases makes it possible for one team to p
 Making release branches is another straightforward branching operation. Like feature branches, release branches are based on the develop branch. A new release branch can be created using the following methods.
 
 > Creating a realse branch
-
 ```
 Without the git-flow extensions:
 $ git checkout develop
@@ -219,7 +216,6 @@ $ gitfw finsh -r 0.1.0
 
 To finish a release branch, use the following methods:
 > Finishing a release branch
-
 ```
 Without the gitfw extensions:
 $ git checkout develop
