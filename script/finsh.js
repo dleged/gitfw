@@ -13,7 +13,7 @@ function finshEnvBranch(env, brname) {
 			runFinshRelease(brname,tagName);
 			break;
 		case 'hotfix':
-			runFinshHotfix(brname);
+			runFinshHotfix(brname,tagName);
 			break;
 		default:
 	}
@@ -31,7 +31,7 @@ module.exports = function () {
 	}
 }
 
-//todo: merge 有冲突退出?
+//todo: merge reject?
 function runFinshFeature(brname) {
 	let cmdList = [
 		`git checkout develop && git pull`,
@@ -67,21 +67,25 @@ function runFinshRelease(brname,tagName) {
 	], errorType);
 }
 
-function runFinshHotfix(brname) {
-	let cmdList = [
-		`git checkout develop && git pull`,
-		`git merge --no-ff ${brname} && git push`,
-		`git checkout master && git pull`,
-		`git merge --no-ff ${brname} && git push`,
-		`git branch -d ${brname}`
-	];
+function runFinshHotfix(brname,tagName) {
+	runFinshRelease(brname,tagName);
+	// let cmdList = [
+	// 	`git checkout develop && git pull`,
+	// 	`git merge --no-ff ${brname} && git push`,
+	// 	`git checkout master && git pull`,
+	// 	`git merge --no-ff ${brname} && git push`,
+	// 	`git tag -a ${tagName} -m 'my version ${tagName}'`,
+	// 	`git push origin ${tagName}`,
+	// 	`git branch -d ${brname}`
+	// ];
 
-	let errorType = execCmdList(cmdList);
-	pritLogs([
-		`- merge the ${brname} into develop;`,
-		`- merge the ${brname} into master;`,
-		`- delete branch ${brname}`
-	], errorType);
+	// let errorType = execCmdList(cmdList);
+	// pritLogs([
+	// 	`- merge the ${brname} into develop;`,
+	// 	`- merge the ${brname} into master;`,
+	// 	`- git push origin tag ${tagName};`,
+	// 	`- delete branch ${brname}`
+	// ], errorType);
 }
 
 
