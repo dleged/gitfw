@@ -42,15 +42,17 @@ For CLI options, use the `-h` (or `--help`) argument:
 gitfw -h
 
 Usage: gitfw [options] [command]
+
 Options:
   -V, --version                    output the version number
   -h, --help                       output usage information
 
 Commands:
-  acmp [options] [msg]             one line command commit code
+  acmp|cm [options] [msg]          one line command commit code
   branch|br [brname] [baseBranch]  checkout new branch by other branch(default develop branch)
   start|s [options]                start iterating and branch switching
-  finsh|f [options]                finsh iterating and branch switching
+  finsh|f [options] [tagVersion]   finsh iterating and branch switching,[tagVersion] is optional, default is the branch name without package prefix, but must be the
+ same as the version in package.json.
 ```
 
 
@@ -150,9 +152,9 @@ Operation information:
 ### 4.gifs finsh|f [options] <name>
 ```
 $ gitfw finsh -h   
-Usage: finsh|f [options]
+Usage: finsh|f [options] [tagVersion]
 
-finsh iterating and branch switching
+finsh iterating and branch switching,[tagVersion] is optional, default is the branch name without package prefix, but must be the same as the version in package.json.
 
 Options:
   -f, --feature <name>  Branch prefixed with feature
