@@ -1,6 +1,6 @@
 {
   "name": "gitfw",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "The complete solution for git flow workflow.Faster and cooler",
   "mail": "duanduanf@gmail.com",
   "keywords": [
@@ -14,6 +14,10 @@
     "release",
     "hotfix"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dleged/gitfw"
+  },
   "bin": {
     "gitfw": "index.js"
   },
