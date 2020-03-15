@@ -1,6 +1,6 @@
 {
   "name": "gitfw",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The complete solution for git flow workflow.Faster and cooler",
   "mail": "duanduanf@gmail.com",
   "keywords": [
@@ -19,7 +19,8 @@
     "url": "https://github.com/dleged/gitfw"
   },
   "bin": {
-    "gitfw": "index.js"
+    "gitfw": "index.js",
+    "gf": "index.js"
   },
   "main": "index.js",
   "scripts": {
@@ -28,8 +29,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.19.0",
     "chalk": "^2.4.2",
+    "commander": "^2.19.0",
     "shelljs": "^0.8.3"
   }
 }

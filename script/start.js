@@ -1,6 +1,6 @@
 'use strict';
 
-const { exec } = require('./helpers');
+const { exec,localCodeIsModify } = require('./helpers');
 const chalk = require('chalk');
 function logs(msg){
 	console.log(msg);
@@ -33,6 +33,7 @@ function startEnvBranch(env,brname){
 }
 
 module.exports = function(){
+	localCodeIsModify();
 	let opts = this.opts();
 	let keys = Object.keys(opts);
 	for(let i = 0,len = keys.length; i < len; i++){

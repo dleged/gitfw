@@ -1,5 +1,5 @@
 
-# gitfw
+# gitfw(alias gf)
 
 gitfw is a cli-tool that helps develop make sure the team is all in agreement;
 to ensure the team is on the same page, an agreed upon Git workflow should be developed or selected.

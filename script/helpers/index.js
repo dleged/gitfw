@@ -3,6 +3,7 @@
 const shell = require('shelljs');
 const chalk = require('chalk');
 const path = require('path');
+const fs = require('fs');
 let _exec_ = shell.exec;
 
 //_exec_ run stderr
@@ -43,8 +44,8 @@ exports.getCurentBranchName = function(){
  * 
  */
 exports.getCurentVersion = function(){
-	const pkgPath = path.resolve(process.cwd,'package.json');
-	if(fs.existSync()) throw Error('does the package exist?');
+	const pkgPath = path.resolve(process.cwd(),'package.json');
+	if(fs.existsSync()) throw Error('does the package exist?');
 	const pkg = require(pkgPath);
 	if(!pkg.version) throw Error('versoin is not defined in pacakge.json');
 	return pkg.version;

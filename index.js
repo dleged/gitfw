@@ -44,8 +44,8 @@ program
 	.action(start);
 
 program
-	.command('finsh')
-  .description('finsh iterating and branch switching')
+	.command('finsh [tagVersion]')
+  .description('finsh iterating and branch switching,[tagVersion] is optional, default is the branch name without package prefix, but must be the same as the version in package.json.')
   .alias('f')
   .option('-f, --feature <name>', 'Branch prefixed with feature')
   .option('-x, --hotfix <name>', 'Branch prefixed with hotfix')
