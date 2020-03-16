@@ -13,7 +13,7 @@ function _setUpStream(localBrname){
 	setUpStream(localBrname);
 }
 
-module.exports = function acmp(msg){
+module.exports = function acmp(msg = 'daily conding'){
 	let localBrname = _currentBranch();
 	let prefix = preCommitMsg(this.opts());
 	prefix = prefix.join('/') + ': ';

@@ -1,5 +1,5 @@
 
-# gitfw
+# gitfw(alias gf)
 
 gitfw is a cli-tool that helps develop make sure the team is all in agreement;
 to ensure the team is on the same page, an agreed upon Git workflow should be developed or selected.
@@ -42,15 +42,17 @@ For CLI options, use the `-h` (or `--help`) argument:
 gitfw -h
 
 Usage: gitfw [options] [command]
+
 Options:
   -V, --version                    output the version number
   -h, --help                       output usage information
 
 Commands:
-  acmp [options] [msg]             one line command commit code
+  acmp|cm [options] [msg]          one line command commit code
   branch|br [brname] [baseBranch]  checkout new branch by other branch(default develop branch)
   start|s [options]                start iterating and branch switching
-  finsh|f [options]                finsh iterating and branch switching
+  finsh|f [options] [tagVersion]   finsh iterating and branch switching,[tagVersion] is optional, default is the branch name without package prefix, but must be the
+ same as the version in package.json.
 ```
 
 
@@ -81,9 +83,15 @@ Options:
 ```
 
 #### for example:
-now your branch is feature/shopcar_page,and use 'gitfw acmp --feat [msg]' to commit: 
+1uickly submit your code with recording and push to remote,now your branch is feature/shopcar_page,and use 'gitfw acmp --feat [msg]' to commit: 
 ```
-$  gitfw acmp --feat 'new shopcar page'
+Without the gitfw extensions:
+$ git add .
+$ git commit -m 'new shopcar page'
+$ git push
+
+When using the gitfw extension:
+$  gitfw acmp --feat 'new shopcar page' 
 
 * feature/shopcar_page
 [feature/shopcar_page 8eaf024] feat: new shopcar page
@@ -150,9 +158,9 @@ Operation information:
 ### 4.gifs finsh|f [options] <name>
 ```
 $ gitfw finsh -h   
-Usage: finsh|f [options]
+Usage: finsh|f [options] [tagVersion]
 
-finsh iterating and branch switching
+finsh iterating and branch switching,[tagVersion] is optional, default is the branch name without package prefix, but must be the same as the version in package.json.
 
 Options:
   -f, --feature <name>  Branch prefixed with feature
@@ -163,6 +171,7 @@ Options:
 #### for example:
 finsh a feature branch
 ```
+gitfw finsh -f shopcar_page
 Switched to branch 'develop'
 Your branch is up to date with 'origin/develop'.
 Already up to date.
@@ -211,7 +220,7 @@ $ git checkout develop
 $ git checkout -b release/0.1.0
 
 When using the git-flow extensions:
-$ gitfw finsh -r 0.1.0
+$ gitfw start -r 0.1.0
 ````
 
 To finish a release branch, use the following methods:
@@ -222,6 +231,8 @@ $ git checkout develop
 $ git merge release/0.1.0
 $ git checkout master
 $ git merge release/0.1.0
+$ git tag -a 0.1.0 -m 'my version 0.1.0'
+$ git push origin 0.1.0
 
 Or with the gitfw extension:
 $ gitfw finsh -r '0.1.0'
@@ -235,10 +246,10 @@ Maintenance or “hotfix” branches are used to quickly patch production releas
 ```
 Without the gitfw extensions:
 $ git checkout master
-$ git checkout -b fix_style_0.1.1
+$ git checkout -b hotfix/fix_pay_error
 
 When using the git-style extensions: 
-$ gitfw start -x style_0.1.1
+$ gitfw start -x fix_pay_error
 ```
 
 To finish a release branch, use the following methods:
@@ -246,14 +257,16 @@ To finish a release branch, use the following methods:
 
 ```
 Without the gitfw extensions:
-$ git checkout master
-$ git merge hotfix_branch
 $ git checkout develop
-$ git merge hotfix_branch
-$ git branch -D hotfix_branch
+$ git merge hotfix/fix_pay_error
+$ git checkout master
+$ git merge hotfix/fix_pay_error
+$ git tag -a 0.1.0 -m 'my version 0.1.0'
+$ git push origin 0.1.0
+$ git branch -D hotfix/fix_pay_error
 
 Or with the gitfw extension:
-$ gitfw finsh -x style_0.1.1
+$ gitfw finsh -x fix_pay_error 0.1.1
 ```
 
 # Summary
