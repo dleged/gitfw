@@ -183,7 +183,6 @@ Operation information:
 - delete branch feature/shopcar_page
 ```
 
-
 # How it works
 #### 1.Feature Branches
 feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop;
