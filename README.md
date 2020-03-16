@@ -83,9 +83,15 @@ Options:
 ```
 
 #### for example:
-now your branch is feature/shopcar_page,and use 'gitfw acmp --feat [msg]' to commit: 
+1uickly submit your code with recording and push to remote,now your branch is feature/shopcar_page,and use 'gitfw acmp --feat [msg]' to commit: 
 ```
-$  gitfw acmp --feat 'new shopcar page'
+Without the gitfw extensions:
+$ git add .
+$ git commit -m 'new shopcar page'
+$ git push
+
+When using the gitfw extension:
+$  gitfw acmp --feat 'new shopcar page' 
 
 * feature/shopcar_page
 [feature/shopcar_page 8eaf024] feat: new shopcar page
@@ -165,6 +171,7 @@ Options:
 #### for example:
 finsh a feature branch
 ```
+gitfw finsh -f shopcar_page
 Switched to branch 'develop'
 Your branch is up to date with 'origin/develop'.
 Already up to date.
@@ -175,7 +182,6 @@ Operation information:
 - merge the feature/shopcar_page into develop;
 - delete branch feature/shopcar_page
 ```
-
 
 # How it works
 #### 1.Feature Branches
@@ -213,7 +219,7 @@ $ git checkout develop
 $ git checkout -b release/0.1.0
 
 When using the git-flow extensions:
-$ gitfw finsh -r 0.1.0
+$ gitfw start -r 0.1.0
 ````
 
 To finish a release branch, use the following methods:
@@ -224,6 +230,8 @@ $ git checkout develop
 $ git merge release/0.1.0
 $ git checkout master
 $ git merge release/0.1.0
+$ git tag -a 0.1.0 -m 'my version 0.1.0'
+$ git push origin 0.1.0
 
 Or with the gitfw extension:
 $ gitfw finsh -r '0.1.0'
@@ -237,10 +245,10 @@ Maintenance or “hotfix” branches are used to quickly patch production releas
 ```
 Without the gitfw extensions:
 $ git checkout master
-$ git checkout -b fix_style_0.1.1
+$ git checkout -b hotfix/fix_pay_error
 
 When using the git-style extensions: 
-$ gitfw start -x style_0.1.1
+$ gitfw start -x fix_pay_error
 ```
 
 To finish a release branch, use the following methods:
@@ -248,14 +256,16 @@ To finish a release branch, use the following methods:
 
 ```
 Without the gitfw extensions:
-$ git checkout master
-$ git merge hotfix_branch
 $ git checkout develop
-$ git merge hotfix_branch
-$ git branch -D hotfix_branch
+$ git merge hotfix/fix_pay_error
+$ git checkout master
+$ git merge hotfix/fix_pay_error
+$ git tag -a 0.1.0 -m 'my version 0.1.0'
+$ git push origin 0.1.0
+$ git branch -D hotfix/fix_pay_error
 
 Or with the gitfw extension:
-$ gitfw finsh -x style_0.1.1
+$ gitfw finsh -x fix_pay_error 0.1.1
 ```
 
 # Summary
