@@ -28,11 +28,11 @@ program
 	.action(acmp);
 
 program
-	.version(pkg.version)
-	.command('branch [brname] [baseBranch]')
+  .version(pkg.version)
+  .command('branch [brname] [baseBranch]')
   .description('checkout new branch by other branch(default develop branch)')
   .alias('br')
-	.action(branch);
+  .action(branch);
 
 program
 	.command('start')
@@ -44,7 +44,7 @@ program
 	.action(start);
 
 program
-	.command('finsh [tagVersion]')
+  .command('finsh [tagVersion]')
   .description('finsh iterating and branch switching,[tagVersion] is optional, default is the branch name without package prefix, but must be the same as the version in package.json.')
   .alias('f')
   .option('-f, --feature <name>', 'Branch prefixed with feature')
