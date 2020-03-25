@@ -25,7 +25,7 @@ program
   .option('--deps','upgrade deps')
   .option('--release','Release version')
   .option('--other','Other modification')
-	.action(acmp);
+  .action(acmp);
 
 program
   .version(pkg.version)
@@ -35,13 +35,13 @@ program
   .action(branch);
 
 program
-	.command('start')
+  .command('start')
   .description('start iterating and branch switching')
   .alias('s')
   .option('-f, --feature <name>', 'Branch prefixed with feature')
   .option('-x, --hotfix <name>', 'Branch prefixed with hotfix')
   .option('-r, --release <name>', 'Branch prefixed with release')
-	.action(start);
+  .action(start);
 
 program
   .command('finsh [tagVersion]')
