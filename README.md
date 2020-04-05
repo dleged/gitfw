@@ -87,7 +87,7 @@ Options:
 ```
 Without the gitfw extensions:
 $ git add .
-$ git commit -m 'new shopcar page'
+$ git commit -m -a 'new shopcar page'
 $ git push
 
 When using the gitfw extension:
