@@ -18,7 +18,7 @@ module.exports = function acmp(msg = 'daily conding'){
 	let prefix = preCommitMsg(this.opts());
 	prefix = prefix.join('/') + ': ';
 	msg = prefix + msg;
-	exec(`git add . && git commit -m '${msg}'`,() => {
+	exec(`git add . && git commit -m -a '${msg}'`,() => {
 		_setUpStream(localBrname);//setUpStream push
 		pritLogs(localBrname,msg);
 	});
