@@ -77,21 +77,6 @@ function runFinshRelease(brname,tagVersion) {
 
 function runFinshHotfix(brname,tagVersion) {
 	runFinshRelease(brname,tagVersion);
-	// let cmdList = [
-	// 	`git checkout develop && git pull`,
-	// 	`git merge --no-ff ${brname} && git push`,
-	// 	`git checkout master && git pull`,
-	// 	`git merge --no-ff ${brname} && git push`,
-	// 	`git branch -d ${brname}`
-	// ];
-	// let tagName = `v${tagVersion}`;
-
-	// let errorType = execCmdList(cmdList);
-	// pritLogs([
-	// 	`- merge the ${brname} into develop;`,
-	// 	`- merge the ${brname} into master;`,
-	// 	`- delete branch ${brname}`
-	// ], errorType);
 }
 
 

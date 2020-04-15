@@ -40,9 +40,8 @@ exports.localCodeIsModify = function(){
 exports.getCurentBranchName = function(){
 	return _exec_('git rev-parse --abbrev-ref HEAD', {silent: true}).toString();
 }
-/**
- * 
- */
+
+
 exports.getCurentVersion = function(){
 	const pkgPath = path.resolve(process.cwd(),'package.json');
 	if(fs.existsSync()) throw Error('does the package exist?');
@@ -51,9 +50,6 @@ exports.getCurentVersion = function(){
 	return pkg.version;
 }
 
-/**
- * 
- */
 exports.filterObjectValueTrue = function(obj){
 	return 	Object.keys(obj).reduce((acc,key) => {
 		if(obj[key]){
@@ -62,7 +58,6 @@ exports.filterObjectValueTrue = function(obj){
 		return acc;
 	},[]);
 }
-
 
 
 function cmdErrorTypeHandle(stdout,cmdErrorType){

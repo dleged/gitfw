@@ -5,8 +5,10 @@ const chalk = require('chalk');
 const { preCommitMsg } = require('./helpers/pre-commit-msg');
 
 function _currentBranch(){
-	let msg = exec('git branch --contains');
-	return msg.stdout.split('*')[1].split('\n')[0];
+	// let msg = exec('git branch --contains');
+	// return msg.stdout.split('*')[1].split('\n')[0];
+	let msg = exec('git rev-parse --abbrev-ref HEAD');
+	return msg.stdout;
 }
 
 function _setUpStream(localBrname){
